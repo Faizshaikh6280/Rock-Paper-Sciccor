@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.m-b {
+  margin-bottom: 7rem;
+}
+.draw {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) skewX(-12deg);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 1rem 3rem;
+  background-color: #ffb800;
+  cursor: no-drop;
+  user-select: none;
+  box-shadow: 0.3rem 1rem 1.5rem rgba(0, 0, 0, 0.4);
+  /* transition: all 0.3s ease; */
+  animation: animate 0.3s ease-out;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) skewX(-12deg) scale(2.5);
+  }
+  60% {
+    transform: translate(-50%, -50%) skewX(-15deg) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) skewX(-12deg) scale(1);
+  }
+}
+/* .draw:hover {
+
+} */
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 75px;
+}
+
+li.pick-one {
+  display: flex;
+  text-align: center;
+}
+
+li.pick-one button {
+  background: none;
+  border: 2px solid black;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+  height: 355px;
+  width: 325px;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li.pick-one button:hover {
+  border: 10px solid #ffb800;
+}
+
+li.pick-one img {
+  max-height: 250px;
+  max-width: 250px;
+}
+
+/* Winner Page */
+body.winner.you-wins {
+  background: url("./images/you-win.svg") left top no-repeat;
+  background-size: auto 100%;
+}
+
+body.winner.computer-wins {
+  background: url("./images/computer-wins.svg") right top no-repeat;
+  background-size: auto 100%;
+}
+
+body.computer-wins h1.you-win,
+body.you-wins h1.computer-wins {
+  visibility: hidden;
+}
+
+body.winner .wrapper {
+  display: flex;
+  gap: 200px;
+  position: relative;
+}
+
+body.winner img {
+  mix-blend-mode: multiply;
+}
+
+.computer-pick img {
+  transform: scaleX(-1);
+}
+
+.play-again {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  font-family: "Roboto Mono", monospace;
+  font-size: 2rem;
+  border: 2px solid black;
+  background: none;
+  padding: 15px 85px;
+  cursor: pointer;
+}
+
+.play-again:hover {
+  background: black;
+  color: white;
+}
